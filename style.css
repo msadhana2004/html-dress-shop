@@ -1,0 +1,79 @@
+/* Basic styles */
+body {
+    font-family: sans-serif;
+  }
+  
+  .navbar, .sidenav {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f1f1f1;
+  }
+  
+  .navbar.brand, .sidenav a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 1rem;
+  }
+  
+  .navbar .nav-list, .sidenav .sidenav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar .nav-list li, .sidenav .sidenav-list li {
+    display: inline-block;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: black;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  
+  /* Side Navbar Styles */
+  .sidenav {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially hidden */
+    width: 200px;
+    height: 100vh; /* Full viewport height */
+    transition: all 0.3s ease-in-out;
+    z-index: 1; /* Ensure it sits above other elements */
+  }
+  
+  .sidenav.active {
+    left: 0; /* Slide in when active */
+  }
+  
+  .sidenav-list .subnav {
+    display: none; /* Hide submenus initially */
+  }
+  
+  .sidenav-list .subnav a {
+    padding-left: 2rem; /* Indent submenu items */
+  }
+  
+  /* Responsiveness (hide menu on larger screens) */
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    
+    .sidenav {
+      display: none; /* Hide sidenav on larger screens */
+    }
+  }
+  
